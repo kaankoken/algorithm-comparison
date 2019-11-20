@@ -50,54 +50,54 @@ int main(int argc, char **argv) {
     //Bucketting operation according to given range method 
     for (i = 0; i < n; i++)  {
         if (min <= listOfNumber[i] && listOfNumber[i] < ((min + range) / 10)) {
-            size[0]++;
-            bucket[0] = (int *)realloc(bucket[0], sizeof(int) * size[0]);
-            bucket[0][size[0] - 1] = listOfNumber[i];
+            size[0]++; //increases size of bucket 1
+            bucket[0] = (int *)realloc(bucket[0], sizeof(int) * size[0]); // reallocate the bucket 1 with new size
+            bucket[0][size[0] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 2 * range) / 10)) {
-            size[1]++;
-            bucket[1] = (int *)realloc(bucket[1], sizeof(int) * size[1]);
-            bucket[1][size[1] - 1] = listOfNumber[i];
+            size[1]++; //increases size of bucket 2
+            bucket[1] = (int *)realloc(bucket[1], sizeof(int) * size[1]); // reallocate the bucket 2 with new size
+            bucket[1][size[1] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 2 * range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 3 * range) / 10)) {
-            size[2]++;
-            bucket[2] = (int *)realloc(bucket[2], sizeof(int) * size[2]);
-            bucket[2][size[2] - 1] = listOfNumber[i];
+            size[2]++; //increases size of bucket 3
+            bucket[2] = (int *)realloc(bucket[2], sizeof(int) * size[2]); // reallocate the bucket 3 with new size
+            bucket[2][size[2] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 3 * range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 4 * range) / 10)) {
-            size[3]++;
-            bucket[3] = (int *)realloc(bucket[3], sizeof(int) * size[3]);
-            bucket[3][size[3] - 1] = listOfNumber[i];
+            size[3]++; //increases size of bucket 4
+            bucket[3] = (int *)realloc(bucket[3], sizeof(int) * size[3]); // reallocate the bucket 4 with new size
+            bucket[3][size[3] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 4 * range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 5 * range) / 10)) {
-            size[4]++;
-            bucket[4] = (int *)realloc(bucket[4], sizeof(int) * size[4]);
-            bucket[4][size[4] - 1] = listOfNumber[i];
+            size[4]++; //increases size of bucket 5
+            bucket[4] = (int *)realloc(bucket[4], sizeof(int) * size[4]); // reallocate the bucket 5 with new size
+            bucket[4][size[4] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 5 * range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 6 * range) / 10)) {
-            size[5]++;
-            bucket[5] = (int *)realloc(bucket[5], sizeof(int) * size[5]);
-            bucket[5][size[5] - 1] = listOfNumber[i];
+            size[5]++; //increases size of bucket 6
+            bucket[5] = (int *)realloc(bucket[5], sizeof(int) * size[5]); // reallocate the bucket 6 with new size
+            bucket[5][size[5] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 6 * range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 7 * range) / 10)) {
-            size[6]++;
-            bucket[6] = (int *)realloc(bucket[6], sizeof(int) * size[6]);
-            bucket[6][size[6] - 1] = listOfNumber[i];
+            size[6]++; //increases size of bucket 7
+            bucket[6] = (int *)realloc(bucket[6], sizeof(int) * size[6]); // reallocate the bucket 7 with new size
+            bucket[6][size[6] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 7 * range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 8 * range) / 10)) {
-            size[7]++;
-            bucket[7] = (int *)realloc(bucket[7], sizeof(int) * size[7]);
-            bucket[7][size[7] - 1] = listOfNumber[i];
+            size[7]++; //increases size of bucket 8
+            bucket[7] = (int *)realloc(bucket[7], sizeof(int) * size[7]); // reallocate the bucket 8 with new size
+            bucket[7][size[7] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 8 * range) / 10) <= listOfNumber[i] && listOfNumber[i] < ((min + 9 * range) / 10)) {
-            size[8]++;
-            bucket[8] = (int *)realloc(bucket[8], sizeof(int) * size[8]);
-            bucket[8][size[8] - 1] = listOfNumber[i];
+            size[8]++; //increases size of bucket 9
+            bucket[8] = (int *)realloc(bucket[8], sizeof(int) * size[8]); // reallocate the bucket 9 with new size
+            bucket[8][size[8] - 1] = listOfNumber[i]; //put the number end of the list
         }
         else if (((min + 9 * range) / 10) <= listOfNumber[i] && listOfNumber[i] <= max) {
-            size[9]++;
-            bucket[9] = (int *)realloc(bucket[9], sizeof(int) * size[9]);
-            bucket[9][size[9] - 1] = listOfNumber[i];
+            size[9]++; //increases size of bucket 10
+            bucket[9] = (int *)realloc(bucket[9], sizeof(int) * size[9]); // reallocate the bucket 10 with new size
+            bucket[9][size[9] - 1] = listOfNumber[i]; //put the number end of the list
         }
     }
     //Sorting the buckets and prints
