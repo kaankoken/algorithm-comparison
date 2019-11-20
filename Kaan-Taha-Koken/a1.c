@@ -26,7 +26,6 @@ int main(int argc, char **argv) {
     for (i = 0; i < n; i++)
         scanf("%d", (listOfNumber + i));
     //printList(listOfNumber, n);
-
     min = findMin(listOfNumber, n);
     max = findMax(listOfNumber, n);
     //Determine the range using minumum and maximum values on the list
@@ -118,7 +117,7 @@ int main(int argc, char **argv) {
     // time count stars for original insertion sort
     gettimeofday(&tval_before, NULL);
     //sort original list
-    insertionSort(listOfNumber, 100000);
+    insertionSort(listOfNumber, n);
     // time count stops
     gettimeofday(&tval_after, NULL);
     //prints starting time and finish time of operation
