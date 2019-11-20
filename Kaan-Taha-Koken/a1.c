@@ -31,18 +31,23 @@ int main(int argc, char **argv) {
     max = findMax(listOfNumber, n);
     //Determine the range using minumum and maximum values on the list
     range = max - min;
-
+    
+    //It allocates 10 buckets
     int **bucket;
     bucket = (int **)malloc(sizeof(int*) * 10);
-    
+    //It is responsible for holding the size of each bucket
     int *size;
     size = (int *)malloc(sizeof(int) * 10);
-    
+    //Each bucket allocated with 1 element
     for (i = 0; i < 10; i++)
         *(bucket + i) = (int *)malloc(sizeof(int) * 1);
+    //Size initialized 0 for every bucket element
     for (i = 0; i < 10; i++)
         size[i] = 0;
-    gettimeofday(&tval_before, NULL);    
+    //It starts the time count in order to calculate operation performance
+    gettimeofday(&tval_before, NULL);   
+
+    //Bucketting operation according to given range method 
     for (i = 0; i < n; i++)  {
         if (min <= listOfNumber[i] && listOfNumber[i] < ((min + range) / 10)) {
             size[0]++;
@@ -95,27 +100,36 @@ int main(int argc, char **argv) {
             bucket[9][size[9] - 1] = listOfNumber[i];
         }
     }
-
+    //Sorting the buckets and prints
     for (i = 0; i < 10; i++) {
         insertionSort(bucket[i], size[i]);
         printList(bucket[i], size[i]);
     }
+    //it stops the time count
     gettimeofday(&tval_after, NULL);
-    printf("Started at: %ld.%06ld\n", (long int)tval_before.tv_sec, (long int)tval_before.tv_usec);
-	printf("Ended at: %ld.%06ld\n", (long int)tval_after.tv_sec, (long int)tval_after.tv_usec);
-    for (i = 0; i < 10; i++) {
-        free(bucket[i]);
-    }
-
-    gettimeofday(&tval_before, NULL);    
-    insertionSort(listOfNumber, 100000);
-    gettimeofday(&tval_after, NULL);
+    //prints starting time and finish time of operation
     printf("Started at: %ld.%06ld\n", (long int)tval_before.tv_sec, (long int)tval_before.tv_usec);
 	printf("Ended at: %ld.%06ld\n", (long int)tval_after.tv_sec, (long int)tval_after.tv_usec);
     
+    //free the bucket array
+    for (i = 0; i < 10; i++) {
+        free(bucket[i]);
+    }
+    // time count stars for original insertion sort
+    gettimeofday(&tval_before, NULL);
+    //sort original list
+    insertionSort(listOfNumber, 100000);
+    // time count stops
+    gettimeofday(&tval_after, NULL);
+    //prints starting time and finish time of operation
+    printf("Started at: %ld.%06ld\n", (long int)tval_before.tv_sec, (long int)tval_before.tv_usec);
+	printf("Ended at: %ld.%06ld\n", (long int)tval_after.tv_sec, (long int)tval_after.tv_usec);
+    
+    //free other elements on the program
     free(bucket);
     free(size);
     free(listOfNumber);
+    
     return 0;
 }
 
